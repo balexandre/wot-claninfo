@@ -1,0 +1,36 @@
+<p>&nbsp;</p>
+
+<ul class="list-unstyled list-inline list-tier">
+    <li ng-repeat="tank in allTankInfosTier6" data-sortby="{{playersByTankId[tank].length}}">
+        <span class="badge">{{playersByTankId[tank].length}}</span>
+        <img ng-src="{{allTankInfos[tank].image}}" alt="" class="tank-img"
+             pop-over title="Tank fans" fans="playerNamesByTankId[tank]" />
+        <br>
+        <div class="more-info text-center" ng-show="currentPlayer">
+
+        	{{allTanksByPlayerId2[currentPlayer][tank].statistics.wins / allTanksByPlayerId2[currentPlayer][tank].statistics.battles | percentage}} ({{allTanksByPlayerId2[currentPlayer][tank].statistics.battles | kilos}})
+
+            <div style="display:inline-block;"
+                 ng-switch on="allTanksByPlayerId2[currentPlayer][tank].mark_of_mastery">
+                <div class="" ng-switch-when="0">
+                    –
+                </div>
+                <div class="" ng-switch-when="4">
+                    <img ng-src="http://worldoftanks.eu/static/3.24.0.2/common/img/classes/class-ace.png" />
+                </div>
+                <div class="" ng-switch-default>
+                    <img ng-src="http://worldoftanks.eu/static/3.24.0.2/common/img/classes/class-{{allTanksByPlayerId2[currentPlayer][tank].mark_of_mastery}}.png" />
+                </div>
+            </div>
+                        
+            <!--
+            Battles: {{allTanksByPlayerId2[currentPlayer][tank].statistics.battles}} |
+            Wins: {{allTanksByPlayerId2[currentPlayer][tank].statistics.wins}} |
+            Marks: {{allTanksByPlayerId2[currentPlayer][tank].mark_of_mastery}} -->
+        </div>
+        <div class="text-center text-wrapper">
+            <span class="b-tankstype-ico b-tankstype-ico__{{allTankInfos[tank].type | lowercase}}"></span>
+            <span class="text">{{allTankInfos[tank].name_i18n}}</span>
+        </div>
+    </li>
+</ul>

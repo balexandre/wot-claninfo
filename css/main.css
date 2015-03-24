@@ -1,0 +1,229 @@
+/* ==========================================================================
+   Custom styles
+   ========================================================================== */
+
+body {
+    font: 300 21px Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: #ddd;
+    background-color: #333;
+    border-top: 5px solid #fc0;
+    /*
+    -webkit-box-shadow: inset 0 3px 30px rgba(0,0,0,0.3);
+    -moz-box-shadow: inset 0 3px 30px rgba(0,0,0,0.3);
+    box-shadow: inset 0 3px 30px rgba(0,0,0,0.3);*/
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.search-box {
+    background-color: #3F1F1F;
+    color: #fff;
+    margin: -7px 0;
+    -webkit-box-shadow: inset 0 3px 10px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: inset 0 3px 10px rgba(0, 0, 0, 0.4);
+    box-shadow: inset 0 3px 10px rgba(0, 0, 0, 0.4);
+}
+
+.search-box form {
+    margin: 20px 0;
+    padding: 0;
+    text-shadow: none;
+}
+
+a:hover {
+    color: #f90;
+}
+
+a:active, a:hover {
+    outline: 0;
+    text-decoration: none;
+}
+
+a {
+    color: #fc0;
+    text-decoration: none;
+    -webkit-transition: all 0.25s;
+    -moz-transition: all 0.25s;
+    -o-transition: all 0.25s;
+    transition: all 0.25s;
+}
+
+a {
+    background-color: transparent;
+}
+
+.intro {
+}
+
+.intro h1 {
+    font-size: 28px;
+    line-height: 22px;
+    margin: 0;
+    padding: 20px 0;
+}
+
+.intro h1 small {
+    font-size: 12px;
+    line-height: 1em;
+    margin: 0;
+}
+
+td {
+    font-size: 14px;
+}
+
+.table > tbody > tr > td.clan-image {
+    vertical-align: middle;
+}
+
+th {
+    font-size: 16px;
+}
+
+th a {
+    font-size: 10px;
+}
+
+.updated {
+    font-size: 12px;
+    border-bottom: 1px #888 solid;
+    padding-bottom: 10px;
+}
+
+.darker {
+    color: #777;
+}
+
+.back-button {
+    margin-top: 32px;
+    font-size: 16px;
+    float: right;
+}
+
+span.epaulettes img {
+    width: 28px;
+}
+
+.table > thead > tr > td.warning, .table > tbody > tr > td.warning, .table > tfoot > tr > td.warning, .table > thead > tr > th.warning, .table > tbody > tr > th.warning, .table > tfoot > tr > th.warning, .table > thead > tr.warning > td, .table > tbody > tr.warning > td, .table > tfoot > tr.warning > td, .table > thead > tr.warning > th, .table > tbody > tr.warning > th, .table > tfoot > tr.warning > th {
+    background-color: #666;
+}
+
+/* main.cs */
+ul.list-inline li {
+    min-width: 30%;
+    min-height: 160px;
+    text-align: center;
+    margin-bottom: 12px;
+}
+ul.list-inline li:hover {
+    background-color: #4F4F4F;
+    border-radius: 6px;
+}
+ul.list-inline li .text-wrapper {
+    background-color: #715A00;
+    margin-top: -10px;
+    clear: both;
+    border-radius: 6px;
+    margin-bottom: 6px;
+}
+ul.list-inline li .text-wrapper .text,
+ul.list-inline li .more-info {
+    font-size: 12px;
+    margin-top: 5px;
+    margin-bottom: 0;
+    height: 42px;
+    /* background-color: #ccc; */
+    text-align: center;
+    width: 100%;
+    clear: both;
+}
+ul.list-inline li img.tank-img {
+    border: 1px dashed #252525;
+    cursor: pointer;
+    width: 160px;
+    float: right;
+    margin: 10px 0 16px;
+}
+ul.list-inline li .badge {
+    float: right;
+    position: relative;
+    right: 30px;
+    top: 2px;
+}
+.nav-tabs small {
+    font-size: 70%;
+    color: #ccc;
+}
+ul.list-clan-members li {
+    padding: 6px;
+}
+ul.list-clan-members li.active,
+ul.list-clan-members li:hover {
+    background-color: #4F4F4F;
+    border-radius: 6px;
+    cursor: pointer;
+}
+ul.list-clan-members li .badge {
+    margin-top: 3px;
+}
+.popover-wrapper {
+    max-height: 160px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.popover-wrapper ul {
+    width: 200px;
+}
+.popover-wrapper ul li,
+.popover-title {
+    color: #333;
+    text-shadow: none;
+}
+
+/* overrides */
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus {
+    background-color: #333333;
+}
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus {
+    color: #fc0;
+}
+.nav-tabs>li>a:hover {
+    border-color: #444 #444 #333;
+}
+.nav>li>a:hover, .nav>li>a:focus {
+     background-color: #444;
+    border-bottom: 1px solid #eee;
+ }
+.badge {
+    color: #ccc;
+    background-color: #715A00;
+}
+
+/* worldoftanks */
+.b-tankstype-ico__lighttank {
+    background-position: 0 -118px;
+}
+.b-tankstype-ico__mediumtank {
+    background-position: 0 -178px;
+}
+.b-tankstype-ico__heavytank {
+    background-position: 0 0;
+}
+.b-tankstype-ico__at-spg {
+    background-position: 0 -237px;
+}
+.b-tankstype-ico__spg {
+    background-position: 0 -59px;
+}
+.b-tankstype-ico {
+    font: 0/0 a;
+    text-shadow: none;
+    color: transparent;
+    display: inline-block;
+    filter: alpha(opacity=90);
+    opacity: 0.9;
+    background-image: url("http://worldoftanks.eu/static/3.24.0.2/common/css/scss/content/encyclopedia/img/level-ico.png");
+    height: 39px;
+    margin: 0 0 0 4px;
+    width: 34px;
+    vertical-align: middle;
+}

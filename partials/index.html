@@ -1,0 +1,80 @@
+<div class="row" style="clear: both;">
+    <div class="col-md-2 col-sm-2 col-lg-1">
+        <!-- {{clan.clan_id | emblemUrl}} -->
+        <img ng-src="{{clan.emblems.large}}" style="margin: 20px;" />
+    </div>
+    <div class="col-md-10 col-sm-10">
+        <h2>[{{clan.abbreviation}}] <small>{{clan.name}}</a></small></h2>
+        <p>{{clan.motto}}</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12 text-right">
+        <!-- 
+        <a class="pointer" ng-click="reload('500024948');">ORDEM</a> | <a class="pointer active" ng-click="reload('500059119');">O2DEM</a><br/>-->
+        <p class="updated">Information updated {{clan.updated_at | fromNow}}</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Members <small><a href="" ng-click="loadClan(clanId);">{{players.length}} members</a></small></h2>
+        <p>&nbsp;</p>
+        <!-- Clan players -->
+        <ul class="list-unstyled list-clan-members">
+            <li ng-repeat="player in clan.members | orderBy:'role_i18n'" data-id="{{player.account_id}}"
+                ng-click="showTanksByPlayerId(player.account_id)" data-sortby="{{allTanksByPlayerId[player.account_id].length}}">
+                <b><a href="">{{player.account_name}}</a></b>
+                <em>{{player.role_i18n}}</em>
+                <span class="pull-right badge">{{allTanksByPlayerId[player.account_id].length}}</span>
+            </li>
+        </ul>
+    </div>
+    <div class="col-md-8">
+        <h2><span ng-show="currentPlayer">{{playersList[currentPlayer].account_name}} vehicles </span><span ng-hide="currentPlayer">Vehicles </span><small>{{allTankInfosTier6.length + allTankInfosTier8.length + allTankInfosTier10.length}} vehicles</small></h2>
+        <p>&nbsp;</p>
+
+        <div role="tabpanel">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist" id="tabtiers">
+                <li role="presentation" class="active">
+                    <a href="#tier6" aria-controls="tier6" role="tab">
+                        Tier 6 <small>{{allTankInfosTier6.length}} vehicles</small>
+                    </a>
+                </li>
+                <li role="presentation">
+                    <a href="#tier8" aria-controls="tier8" role="tab">
+                        Tier 8 <small>{{allTankInfosTier8.length}} vehicles</small>
+                    </a>
+                </li>
+                <li role="presentation">
+                    <a href="#tier10" aria-controls="tier10" role="tab">
+                        Tier 10 <small>{{allTankInfosTier10.length}} vehicles</small>
+                    </a>
+                </li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane fade in active" id="tier6">
+                    <div ng-include="'partials/vehicles-6-details.html'"></div>
+                </div>
+                <div role="tabpanel" class="tab-pane fade" id="tier8">
+                    <div ng-include="'partials/vehicles-8-details.html'"></div>
+                </div>
+                <div role="tabpanel" class="tab-pane fade" id="tier10">
+                    <div ng-include="'partials/vehicles-10-details.html'"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/ng-template" id="popover_template.html">
+    <div class="popover-wrapper">
+        <ul class="list-unstyled">
+            <li ng-repeat='player in fans track by $index | orderBy:player'>{{player}}</li>
+        </ul>
+    </div>
+</script>

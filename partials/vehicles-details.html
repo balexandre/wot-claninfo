@@ -1,0 +1,11 @@
+<p>&nbsp;</p>
+
+<ul class="list-unstyled list-inline list-tier">
+    <li ng-repeat="tank in tabModel" data-sortby="{{playersByTankId[tank].length}}">
+        <span class="badge">{{playersByTankId[tank].length}}</span>
+        <img ng-src="{{allTankInfos[tank].image}}" alt="" class="tank-img"
+             pop-over title="Tank fans" fans="playerNamesByTankId[tank]" />
+        <br><b>{{allTankInfos[tank].name_i18n}}</b>
+        <br>({{allTankInfos[tank].type_i18n}})
+    </li>
+</ul>

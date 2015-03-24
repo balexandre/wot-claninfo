@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app="wotClanInfo">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>ORDEM - Clan info</title>
+
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic,900">
+    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="css/main.css"/>
+
+</head>
+<body>
+    <div class="container" ng-view></div>
+
+    <div class="container">
+        <em>{{year}} &copy; <a target="_blank" href="http://eu.wargaming.net/clans/500024948/">ORDEM Clan</a></em>
+    </div>
+
+    <script src="lib/jquery/dist/jquery.min.js"></script>
+    <script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="lib/underscore/underscore-min.js"></script>
+    <script src="lib/angular/angular.min.js"></script>
+    <script src="lib/angular-route/angular-route.min.js"></script>
+    <script src="lib/momentjs/min/moment.min.js"></script>
+    <script src="app/app.js"></script>
+    <script src="app/SearchSrv.js"></script>
+    <script src="app/MainController.js"></script>
+</body>
+</html>
