@@ -9,7 +9,9 @@
 
         // ##################################################################################
         // # Clan info
-        var tanksPerCall = 200;
+        var tanksPerCall = 200,
+            defaultClanId = "500024948"; // ORDEM Clan data if nothing is used
+                                         // TODO: redirect to a /help page to show how can be done
 
         var onError = function (reason) {
             $log.error(reason);
@@ -28,6 +30,10 @@
 
                 $scope.playersList[playerId] = $scope.clan.members[playerId];
             }
+
+            $scope.pageTitle = $scope.clan.abbreviation + " - Clan Info";
+            $log.info("Title: " + $scope.pageTitle);
+            document.title = $scope.pageTitle;
 
             $log.debug(tanks);
             wotSearch.getPlayerTanks(tanks).then(onTanksComplete, onError); // get all allTanksByPlayerId for each member
@@ -246,7 +252,7 @@
             loadClan();
         };
 
-        $scope.clanId = $location.hash() === "" ? "500024948" : $location.hash();
+        $scope.clanId = $location.hash() === "" ? defaultClanId : $location.hash();
         $scope.loadClan();
 
         $scope.year = (new Date()).getFullYear(); // footer year
